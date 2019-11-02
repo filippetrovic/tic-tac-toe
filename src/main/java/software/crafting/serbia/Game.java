@@ -6,4 +6,7 @@ public class Game {
     return new Board();
   }
 
+  public void playerX(int column, int row) {
+
+  }
 }

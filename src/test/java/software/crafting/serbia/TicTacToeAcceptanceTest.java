@@ -31,30 +31,11 @@ class TicTacToeAcceptanceTest {
     Game game = new Game(new Board());
 
     // when
-    game.playerX(0, 0);
+    game.takeMove(0, 0);
 
     // then
     assertThat(game.toString())
         .isEqualTo("X _ _\n_ _ _\n_ _ _");
-
-  }
-
-  @Test
-  @DisplayName("Player X and O Can Take multiple moves")
-  void playerXAndOCanTakeMultipleMoves() {
-
-    // given
-    Game game = new Game(new Board());
-
-    // when
-    game.playerX(0, 0);
-    game.playerO(1, 1);
-    game.playerX(2, 2);
-    game.playerO(2, 0);
-
-    // then
-    assertThat(game.toString())
-        .isEqualTo("X _ O\n_ O _\n_ _ X");
 
   }
 

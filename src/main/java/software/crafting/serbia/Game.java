@@ -13,14 +13,6 @@ public class Game {
     this.board = board;
   }
 
-  public void playerX(int column, int row) {
-    board.addMove(new Move(row, column, 'X'));
-  }
-
-  public void playerO(int column, int row) {
-    board.addMove(new Move(row, column, 'O'));
-  }
-
   public void takeMove(int column, int row) {
     board.addMove(new Move(row, column, nextPlayer));
 

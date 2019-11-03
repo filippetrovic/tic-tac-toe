@@ -23,30 +23,6 @@ class GameTest {
   void shouldAddPlayerXMoveToBoardWhenBoardIsEmpty() {
 
     // When
-    game.playerX(0, 0);
-
-    // Then
-    verify(board).addMove(new Move(0, 0, 'X'));
-
-  }
-
-  @Test
-  @DisplayName("Should add player X's move to board when the board is empty")
-  void shouldAddPlayerOMoveToBoardWhenBoardIsEmpty() {
-
-    // When
-    game.playerO(0, 0);
-
-    // Then
-    verify(board).addMove(new Move(0, 0, 'O'));
-
-  }
-
-  @Test
-  @DisplayName("First move is for player X")
-  void shouldTakeAMoveForPlayerXFirst() {
-
-    // When
     game.takeMove(0, 0);
 
     // Then

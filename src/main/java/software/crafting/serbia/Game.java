@@ -17,7 +17,7 @@ public class Game {
   }
 
   public void takeMove(int column, int row) {
-
+    playerX(column, row);
   }
 
   @Override

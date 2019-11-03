@@ -1,5 +1,6 @@
 package software.crafting.serbia;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -39,6 +40,35 @@ class GameTest {
 
     // Then
     verify(board).addMove(new Move(0, 0, 'O'));
+
+  }
+
+  @Test
+  @DisplayName("First move is for player X")
+  void shouldTakeAMoveForPlayerXFirst() {
+
+    // When
+    game.takeMove(0, 0);
+
+    // Then
+    verify(board).addMove(new Move(0, 0, 'X'));
+
+  }
+
+  @Test
+  @DisplayName("Should alternate players after each move")
+  @Disabled
+  void shouldAddAlternatePlayersAfterEachMove() {
+
+    // When
+    game.takeMove(0, 0);
+    game.takeMove(1, 0);
+    game.takeMove(1, 2);
+
+    // Then
+    verify(board).addMove(new Move(0, 0, 'X'));
+    verify(board).addMove(new Move(0, 1, 'O'));
+    verify(board).addMove(new Move(2, 1, 'X'));
 
   }
 

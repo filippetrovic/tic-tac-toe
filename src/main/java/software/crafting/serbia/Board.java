@@ -10,10 +10,11 @@ public class Board {
   private List<Integer> columns = new LinkedList<>();
   private List<Integer> rows = new LinkedList<>();
   private List<Character> players = new LinkedList<>();
+  private List<Move> moves = new LinkedList<>();
 
   @Override
   public String toString() {
-    if (columns.isEmpty() || rows.isEmpty()) {
+    if (moves.isEmpty()) {
       return EMPTY_BOARD;
     }
 
@@ -28,5 +29,19 @@ public class Board {
     this.columns.add(column);
     this.rows.add(row);
     this.players.add(player);
+    this.moves.add(new Move(row, column, player));
+  }
+
+  private class Move {
+
+    private final int row;
+    private final int column;
+    private final char player;
+
+    public Move(int row, int column, char player) {
+      this.row = row;
+      this.column = column;
+      this.player = player;
+    }
   }
 }

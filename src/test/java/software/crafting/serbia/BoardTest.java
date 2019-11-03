@@ -14,7 +14,7 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(0, 0);
+    board.addMove(0, 0, 'X');
 
     // Then
     assertThat(board.toString())
@@ -29,7 +29,7 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(0, 2);
+    board.addMove(0, 2, 'X');
 
     // Then
     assertThat(board.toString())
@@ -43,7 +43,7 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(1, 1);
+    board.addMove(1, 1, 'X');
 
     // Then
     assertThat(board.toString())

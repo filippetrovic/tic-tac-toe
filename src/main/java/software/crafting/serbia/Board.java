@@ -6,6 +6,7 @@ public class Board {
 
   private int column = -1;
   private int row = -1;
+  private char player;
 
   @Override
   public String toString() {
@@ -20,8 +21,9 @@ public class Board {
     return stringBuilder.toString();
   }
 
-  public void addMove(int column, int row) {
+  public void addMove(int column, int row, char player) {
     this.column = column;
     this.row = row;
+    this.player = player;
   }
 }

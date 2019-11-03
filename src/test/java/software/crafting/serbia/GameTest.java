@@ -26,7 +26,19 @@ class GameTest {
     game.playerX(0, 0);
 
     // Then
-    verify(board).addMove(0, 0);
+    verify(board).addMove(0, 0, 'X');
+
+  }
+
+  @Test
+  @DisplayName("Should add player X's move to board when the board is empty")
+  void shouldAddPlayerOMoveToBoardWhenBoardIsEmpty() {
+
+    // When
+    game.playerO(0, 0);
+
+    // Then
+    verify(board).addMove(0, 0, 'O');
 
   }
 

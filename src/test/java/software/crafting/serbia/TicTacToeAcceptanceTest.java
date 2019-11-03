@@ -15,10 +15,10 @@ class TicTacToeAcceptanceTest {
     Game game = new Game(new Board());
 
     // when
-    Board board = game.getBoard();
+    // nothing
 
     // then
-    assertThat(board.toString())
+    assertThat(game.toString())
         .isEqualTo("_ _ _\n_ _ _\n_ _ _");
 
   }
@@ -34,9 +34,7 @@ class TicTacToeAcceptanceTest {
     game.playerX(0, 0);
 
     // then
-    Board board = game.getBoard();
-
-    assertThat(board.toString())
+    assertThat(game.toString())
         .isEqualTo("X _ _\n_ _ _\n_ _ _");
 
   }
@@ -55,9 +53,7 @@ class TicTacToeAcceptanceTest {
     game.playerO(2, 0);
 
     // then
-    Board board = game.getBoard();
-
-    assertThat(board.toString())
+    assertThat(game.toString())
         .isEqualTo("X _ O\n_ O _\n_ _ X");
 
   }

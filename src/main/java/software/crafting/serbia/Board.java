@@ -26,8 +26,8 @@ public class Board {
     return stringBuilder.toString();
   }
 
-  public void addMove(int column, int row, char player) {
-    this.moves.add(new Move(row, column, player));
+  public void addMove(Move move) {
+    moves.add(move);
   }
 
 }

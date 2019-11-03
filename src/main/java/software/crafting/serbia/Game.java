@@ -13,10 +13,10 @@ public class Game {
   }
 
   public void playerX(int column, int row) {
-    board.addMove(column, row, 'X');
+    board.addMove(new Move(row, column, 'X'));
   }
 
   public void playerO(int column, int row) {
-    board.addMove(column, row, 'O');
+    board.addMove(new Move(row, column, 'O'));
   }
 }

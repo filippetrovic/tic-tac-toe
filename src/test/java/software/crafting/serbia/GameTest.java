@@ -26,7 +26,7 @@ class GameTest {
     game.playerX(0, 0);
 
     // Then
-    verify(board).addMove(0, 0, 'X');
+    verify(board).addMove(new Move(0, 0, 'X'));
 
   }
 
@@ -38,7 +38,7 @@ class GameTest {
     game.playerO(0, 0);
 
     // Then
-    verify(board).addMove(0, 0, 'O');
+    verify(board).addMove(new Move(0, 0, 'O'));
 
   }
 

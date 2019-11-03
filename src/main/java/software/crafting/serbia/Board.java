@@ -7,4 +7,7 @@ public class Board {
     return "_ _ _\n_ _ _\n_ _ _";
   }
 
+  public void addMove(int column, int row) {
+
+  }
 }

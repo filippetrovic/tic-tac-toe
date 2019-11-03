@@ -42,8 +42,8 @@ class TicTacToeAcceptanceTest {
   }
 
   @Test
-  @DisplayName("Player X and O Can Take single move each")
-  void playerXAndOCanTakeSingleMoveEach() {
+  @DisplayName("Player X and O Can Take multiple moves")
+  void playerXAndOCanTakeMultipleMoves() {
 
     // given
     Game game = new Game(new Board());
@@ -51,12 +51,14 @@ class TicTacToeAcceptanceTest {
     // when
     game.playerX(0, 0);
     game.playerO(1, 1);
+    game.playerX(2, 2);
+    game.playerO(2, 0);
 
     // then
     Board board = game.getBoard();
 
     assertThat(board.toString())
-        .isEqualTo("X _ _\n_ O _\n_ _ _");
+        .isEqualTo("X _ O\n_ O _\n_ _ X");
 
   }
 

@@ -9,28 +9,15 @@ public class Board {
 
   @Override
   public String toString() {
-    if (column == 0 && row == 0) {
-      final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
-      stringBuilder.setCharAt(
-          row * "_ _ _\n".length() + column * "_ ".length(),
-          'X');
-      return stringBuilder.toString();
+    if (column == -1 || row == -1) {
+      return EMPTY_BOARD;
     }
-    if (column == 0 && row == 2) {
-      final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
-      stringBuilder.setCharAt(
-          row * "_ _ _\n".length() + column * "_ ".length(),
-          'X');
-      return stringBuilder.toString();
-    }
-    if (column == 1 && row == 1) {
-      final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
-      stringBuilder.setCharAt(
-          row * "_ _ _\n".length() + column * "_ ".length(),
-          'X');
-      return stringBuilder.toString();
-    }
-    return EMPTY_BOARD;
+
+    final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
+    stringBuilder.setCharAt(
+        row * "_ _ _\n".length() + column * "_ ".length(),
+        'X');
+    return stringBuilder.toString();
   }
 
   public void addMove(int column, int row) {

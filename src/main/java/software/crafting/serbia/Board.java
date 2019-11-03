@@ -15,7 +15,9 @@ public class Board {
       return stringBuilder.toString();
     }
     if (column == 0 && row == 2) {
-      return "_ _ _\n_ _ _\nX _ _";
+      final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
+      stringBuilder.setCharAt(row * "_ _ _\n".length() + column, 'X');
+      return stringBuilder.toString();
     }
     if (column == 1 && row == 1) {
       return "_ _ _\n_ X _\n_ _ _";

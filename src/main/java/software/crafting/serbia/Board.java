@@ -17,7 +17,7 @@ public class Board {
     final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
     stringBuilder.setCharAt(
         row * "_ _ _\n".length() + column * "_ ".length(),
-        'X');
+        player);
     return stringBuilder.toString();
   }
 

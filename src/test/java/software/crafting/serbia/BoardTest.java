@@ -29,11 +29,11 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(0, 2, 'X');
+    board.addMove(0, 2, 'O');
 
     // Then
     assertThat(board.toString())
-        .isEqualTo("_ _ _\n_ _ _\nX _ _");
+        .isEqualTo("_ _ _\n_ _ _\nO _ _");
   }
 
   @Test

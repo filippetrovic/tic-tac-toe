@@ -1,29 +1,32 @@
 package software.crafting.serbia;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Board {
 
   private static final String EMPTY_BOARD = "_ _ _\n_ _ _\n_ _ _";
 
-  private Integer column = -1;
-  private Integer row = -1;
-  private Character player;
+  private List<Integer> columns = new LinkedList<>();
+  private List<Integer> rows = new LinkedList<>();
+  private List<Character> players = new LinkedList<>();
 
   @Override
   public String toString() {
-    if (column == -1 || row == -1) {
+    if (columns.isEmpty() || rows.isEmpty()) {
       return EMPTY_BOARD;
     }
 
     final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
     stringBuilder.setCharAt(
-        row * "_ _ _\n".length() + column * "_ ".length(),
-        player);
+        rows.get(0) * "_ _ _\n".length() + columns.get(0) * "_ ".length(),
+        players.get(0));
     return stringBuilder.toString();
   }
 
   public void addMove(int column, int row, char player) {
-    this.column = column;
-    this.row = row;
-    this.player = player;
+    this.columns.add(column);
+    this.rows.add(row);
+    this.players.add(player);
   }
 }

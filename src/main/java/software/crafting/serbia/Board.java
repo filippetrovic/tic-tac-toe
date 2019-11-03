@@ -11,7 +11,7 @@ public class Board {
   public String toString() {
     if (column == 0 && row == 0) {
       final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
-      stringBuilder.setCharAt(row + column, 'X');
+      stringBuilder.setCharAt(row * "_ _ _\n".length() + column, 'X');
       return stringBuilder.toString();
     }
     if (column == 0 && row == 2) {

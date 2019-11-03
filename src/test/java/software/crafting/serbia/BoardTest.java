@@ -35,4 +35,18 @@ class BoardTest {
     assertThat(board.toString())
         .isEqualTo("_ _ _\n_ _ _\nX _ _");
   }
+
+  @Test
+  @DisplayName("Should return valid string representation of board after a move in the middle of the board")
+  void shouldReturnValidStringRepresentationAfterAMoveInTheMiddle() {
+    // Given
+    Board board = new Board();
+
+    // When
+    board.addMove(1, 1);
+
+    // Then
+    assertThat(board.toString())
+        .isEqualTo("_ _ _\n_ X _\n_ _ _");
+  }
 }

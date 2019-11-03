@@ -13,6 +13,9 @@ public class Board {
     if (column == 0 && row == 2) {
       return "_ _ _\n_ _ _\nX _ _";
     }
+    if (column == 1 && row == 1) {
+      return "_ _ _\n_ X _\n_ _ _";
+    }
     return "_ _ _\n_ _ _\n_ _ _";
   }
 

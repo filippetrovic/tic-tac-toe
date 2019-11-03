@@ -16,6 +16,10 @@ public class Game {
     board.addMove(new Move(row, column, 'O'));
   }
 
+  public void takeMove(int column, int row) {
+
+  }
+
   @Override
   public String toString() {
     return board.toString();

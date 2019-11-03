@@ -7,16 +7,16 @@ public class Game {
 
   private final Board board;
 
-  private Character nextPlayer = PLAYER_X;
+  private Character nextPlayer = PLAYER_O;
 
   public Game(Board board) {
     this.board = board;
   }
 
   public void takeMove(int column, int row) {
-    board.addMove(new Move(row, column, nextPlayer));
-
     nextPlayer = nextPlayer(nextPlayer);
+
+    board.addMove(new Move(row, column, nextPlayer));
   }
 
   private char nextPlayer(Character nextPlayer) {

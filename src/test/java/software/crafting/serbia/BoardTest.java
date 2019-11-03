@@ -49,4 +49,22 @@ class BoardTest {
     assertThat(board.toString())
         .isEqualTo("_ _ _\n_ X _\n_ _ _");
   }
+
+  @Test
+  @DisplayName("Should return valid string representation of board after multiple moves on a board")
+  void shouldReturnValidStringRepresentationAfterMultipleMoves() {
+    // Given
+    Board board = new Board();
+
+    // When
+    board.addMove(1, 1, 'X');
+    board.addMove(0, 0, 'O');
+    board.addMove(0, 2, 'X');
+    board.addMove(0, 1, 'O');
+
+    // Then
+    assertThat(board.toString())
+        .isEqualTo("O _ _\nO X _\nX _ _");
+  }
+
 }

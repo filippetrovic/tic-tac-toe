@@ -16,9 +16,13 @@ public class Board {
     }
 
     final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
-    stringBuilder.setCharAt(
-        moves.get(0).getRow() * "_ _ _\n".length() + moves.get(0).getColumn() * "_ ".length(),
-        moves.get(0).getPlayer());
+
+    for (Move move : moves) {
+      stringBuilder.setCharAt(
+          move.getRow() * "_ _ _\n".length() + move.getColumn() * "_ ".length(),
+          move.getPlayer());
+    }
+
     return stringBuilder.toString();
   }
 

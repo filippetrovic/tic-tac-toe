@@ -15,4 +15,8 @@ public class Game {
   public void playerX(int column, int row) {
     board.addMove(column, row);
   }
+
+  public void playerO(int column, int row) {
+
+  }
 }

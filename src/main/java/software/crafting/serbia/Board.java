@@ -11,16 +11,24 @@ public class Board {
   public String toString() {
     if (column == 0 && row == 0) {
       final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
-      stringBuilder.setCharAt(row * "_ _ _\n".length() + column, 'X');
+      stringBuilder.setCharAt(
+          row * "_ _ _\n".length() + column * "_ ".length(),
+          'X');
       return stringBuilder.toString();
     }
     if (column == 0 && row == 2) {
       final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
-      stringBuilder.setCharAt(row * "_ _ _\n".length() + column, 'X');
+      stringBuilder.setCharAt(
+          row * "_ _ _\n".length() + column * "_ ".length(),
+          'X');
       return stringBuilder.toString();
     }
     if (column == 1 && row == 1) {
-      return "_ _ _\n_ X _\n_ _ _";
+      final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
+      stringBuilder.setCharAt(
+          row * "_ _ _\n".length() + column * "_ ".length(),
+          'X');
+      return stringBuilder.toString();
     }
     return EMPTY_BOARD;
   }

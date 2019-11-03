@@ -22,11 +22,7 @@ public class Game {
   }
 
   public void takeMove(int column, int row) {
-    if (nextPlayer.equals(PLAYER_X)) {
-      playerX(column, row);
-    } else {
-      playerO(column, row);
-    }
+    board.addMove(new Move(row, column, nextPlayer));
 
     nextPlayer = nextPlayer(nextPlayer);
   }

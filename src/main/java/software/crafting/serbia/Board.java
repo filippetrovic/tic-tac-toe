@@ -4,9 +4,9 @@ public class Board {
 
   private static final String EMPTY_BOARD = "_ _ _\n_ _ _\n_ _ _";
 
-  private int column = -1;
-  private int row = -1;
-  private char player;
+  private Integer column = -1;
+  private Integer row = -1;
+  private Character player;
 
   @Override
   public String toString() {

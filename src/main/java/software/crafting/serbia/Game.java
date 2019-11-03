@@ -24,11 +24,15 @@ public class Game {
   public void takeMove(int column, int row) {
     if (nextPlayer.equals(PLAYER_X)) {
       playerX(column, row);
-      nextPlayer = PLAYER_O;
     } else {
       playerO(column, row);
-      nextPlayer = PLAYER_X;
     }
+
+    nextPlayer = nextPlayer(nextPlayer);
+  }
+
+  private char nextPlayer(Character nextPlayer) {
+    return nextPlayer.equals(PLAYER_X) ? PLAYER_O : PLAYER_X;
   }
 
   @Override

@@ -7,9 +7,6 @@ public class Board {
 
   private static final String EMPTY_BOARD = "_ _ _\n_ _ _\n_ _ _";
 
-  private List<Integer> columns = new LinkedList<>();
-  private List<Integer> rows = new LinkedList<>();
-  private List<Character> players = new LinkedList<>();
   private List<Move> moves = new LinkedList<>();
 
   @Override
@@ -20,15 +17,12 @@ public class Board {
 
     final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
     stringBuilder.setCharAt(
-        rows.get(0) * "_ _ _\n".length() + columns.get(0) * "_ ".length(),
-        players.get(0));
+        moves.get(0).getRow() * "_ _ _\n".length() + moves.get(0).getColumn() * "_ ".length(),
+        moves.get(0).getPlayer());
     return stringBuilder.toString();
   }
 
   public void addMove(int column, int row, char player) {
-    this.columns.add(column);
-    this.rows.add(row);
-    this.players.add(player);
     this.moves.add(new Move(row, column, player));
   }
 
@@ -42,6 +36,18 @@ public class Board {
       this.row = row;
       this.column = column;
       this.player = player;
+    }
+
+    public int getRow() {
+      return row;
+    }
+
+    public int getColumn() {
+      return column;
+    }
+
+    public char getPlayer() {
+      return player;
     }
   }
 }

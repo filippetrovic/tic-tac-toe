@@ -1,9 +1,9 @@
 package software.crafting.serbia;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -15,8 +15,12 @@ class GameTest {
   @Mock
   private Board board;
 
-  @InjectMocks
   private Game game;
+
+  @BeforeEach
+  void setUp() {
+    game = new Game(board, new StandardSequence());
+  }
 
   @Test
   @DisplayName("Should add player X's move to board when the board is empty")

@@ -12,7 +12,7 @@ class TicTacToeAcceptanceTest {
   void emptyGame() {
 
     // given
-    Game game = new Game(new Board());
+    Game game = new Game(new Board(), new StandardSequence());
 
     // when
     // nothing
@@ -28,7 +28,7 @@ class TicTacToeAcceptanceTest {
   void playerXCanTakeAMove() {
 
     // given
-    Game game = new Game(new Board());
+    Game game = new Game(new Board(), new StandardSequence());
 
     // when
     game.takeMove(0, 0);
@@ -44,7 +44,7 @@ class TicTacToeAcceptanceTest {
   void playerXAndOCanTakeMovesOneAfterAnother() {
 
     // given
-    Game game = new Game(new Board());
+    Game game = new Game(new Board(), new StandardSequence());
 
     // when
     game.takeMove(0, 0);

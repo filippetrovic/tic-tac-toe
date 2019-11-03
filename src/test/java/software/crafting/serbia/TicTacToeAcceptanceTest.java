@@ -1,6 +1,5 @@
 package software.crafting.serbia;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +25,6 @@ class TicTacToeAcceptanceTest {
 
   @Test
   @DisplayName("Player X Can Take a Move")
-  @Disabled
   void playerXCanTakeAMove() {
 
     // given

@@ -4,6 +4,8 @@ public class Game {
 
   private final Board board;
 
+  private Character nextPlayer = 'X';
+
   public Game(Board board) {
     this.board = board;
   }
@@ -17,7 +19,13 @@ public class Game {
   }
 
   public void takeMove(int column, int row) {
-    playerX(column, row);
+    if (nextPlayer.equals('X')) {
+      playerX(column, row);
+      nextPlayer = 'O';
+    } else {
+      playerO(column, row);
+      nextPlayer = 'X';
+    }
   }
 
   @Override

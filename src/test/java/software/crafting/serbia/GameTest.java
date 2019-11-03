@@ -1,6 +1,5 @@
 package software.crafting.serbia;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -56,8 +55,20 @@ class GameTest {
   }
 
   @Test
+  @DisplayName("Second move is for player O")
+  void shouldTakeAMoveForPlayerOOnSecondMove() {
+
+    // When
+    game.takeMove(0, 0);
+    game.takeMove(1, 1);
+
+    // Then
+    verify(board).addMove(new Move(1, 1, 'O'));
+
+  }
+
+  @Test
   @DisplayName("Should alternate players after each move")
-  @Disabled
   void shouldAddAlternatePlayersAfterEachMove() {
 
     // When

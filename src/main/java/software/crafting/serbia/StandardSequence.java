@@ -4,15 +4,19 @@ public class StandardSequence implements PlayerSequence {
 
   private static final char PLAYER_X = 'X';
   private static final char PLAYER_O = 'O';
-  private Character previousPlayer = PLAYER_O;
+
+  private Character currentPlayer = PLAYER_X;
 
   @Override
   public Character next() {
-    Character nextPlayer = getNextAfter(previousPlayer);
+    currentPlayer = getNextAfter(currentPlayer);
 
-    previousPlayer = nextPlayer;
+    return currentPlayer;
+  }
 
-    return nextPlayer;
+  @Override
+  public Character current() {
+    return currentPlayer;
   }
 
   private char getNextAfter(Character player) {

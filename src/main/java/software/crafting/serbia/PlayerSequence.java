@@ -4,4 +4,5 @@ public interface PlayerSequence {
 
   Character next();
 
+  Character current();
 }

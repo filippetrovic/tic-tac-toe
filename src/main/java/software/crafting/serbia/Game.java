@@ -3,7 +3,7 @@ package software.crafting.serbia;
 public class Game {
 
   private final Board board;
-  private final PlayerSequence playerSequence = new PlayerSequence();
+  private final PlayerSequence playerSequence = new StandardSequence();
 
   public Game(Board board) {
     this.board = board;

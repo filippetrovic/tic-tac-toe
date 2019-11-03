@@ -11,10 +11,6 @@ public class Board {
 
   @Override
   public String toString() {
-    if (moves.isEmpty()) {
-      return EMPTY_BOARD;
-    }
-
     final StringBuilder stringBuilder = new StringBuilder(EMPTY_BOARD);
 
     for (Move move : moves) {

@@ -23,14 +23,17 @@ public class Board {
   }
 
   public void addMove(Move move) {
-    boolean alreadyExists = moves.stream()
-        .map(Move::getPosition)
-        .anyMatch(position -> position.equals(move.getPosition()));
 
-    if (!alreadyExists) {
+    if (!isAlreadyPlayed(move)) {
       moves.add(move);
     }
 
+  }
+
+  private boolean isAlreadyPlayed(Move move) {
+    return moves.stream()
+        .map(Move::getPosition)
+        .anyMatch(position -> position.equals(move.getPosition()));
   }
 
 }

@@ -4,22 +4,20 @@ import java.util.Objects;
 
 class Move {
 
-  private final int row;
-  private final int column;
   private final char player;
+  private final Position position;
 
   public Move(int row, int column, char player) {
-    this.row = row;
-    this.column = column;
+    this.position = new Position(row, column);
     this.player = player;
   }
 
   public int getRow() {
-    return row;
+    return position.getRow();
   }
 
   public int getColumn() {
-    return column;
+    return position.getColumn();
   }
 
   public char getPlayer() {
@@ -29,9 +27,8 @@ class Move {
   @Override
   public String toString() {
     return "Move{" +
-        "row=" + row +
-        ", column=" + column +
-        ", player=" + player +
+        "player=" + player +
+        ", position=" + position +
         '}';
   }
 
@@ -44,13 +41,12 @@ class Move {
       return false;
     }
     Move move = (Move) o;
-    return row == move.row &&
-        column == move.column &&
-        player == move.player;
+    return player == move.player &&
+        position.equals(move.position);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(row, column, player);
+    return Objects.hash(player, position);
   }
 }

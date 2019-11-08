@@ -20,6 +20,10 @@ class Move {
     return position.getColumn();
   }
 
+  public Position getPosition() {
+    return position;
+  }
+
   public char getPlayer() {
     return player;
   }

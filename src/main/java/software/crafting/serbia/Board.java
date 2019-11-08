@@ -24,10 +24,8 @@ public class Board {
 
   public void addMove(Move move) {
     boolean alreadyExists = moves.stream()
-        .anyMatch(toBeChecked ->
-            move.getColumn() == toBeChecked.getColumn() &&
-                move.getRow() == toBeChecked.getRow()
-        );
+        .map(Move::getPosition)
+        .anyMatch(position -> position.equals(move.getPosition()));
 
     if (!alreadyExists) {
       moves.add(move);

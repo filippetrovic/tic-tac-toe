@@ -67,4 +67,19 @@ class BoardTest {
         .isEqualTo("O _ _\nO X _\nX _ _");
   }
 
+  @Test
+  @DisplayName("Should not allow players to play move on the same position")
+  void shouldNotAllowPlayersToPlaySameMove() {
+    // Given
+    Board board = new Board();
+
+    // When
+    board.addMove(new Move(0, 0, 'X'));
+    board.addMove(new Move(0, 0, 'O'));
+
+    // Then
+    assertThat(board.toString())
+        .isEqualTo("X _ _\n_ _ _\n_ _ _");
+  }
+
 }

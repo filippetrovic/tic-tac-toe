@@ -23,7 +23,16 @@ public class Board {
   }
 
   public void addMove(Move move) {
-    moves.add(move);
+    boolean alreadyExists = moves.stream()
+        .anyMatch(toBeChecked ->
+            move.getColumn() == toBeChecked.getColumn() &&
+                move.getRow() == toBeChecked.getRow()
+        );
+
+    if (!alreadyExists) {
+      moves.add(move);
+    }
+
   }
 
 }

@@ -22,12 +22,14 @@ public class Board {
     return stringBuilder.toString();
   }
 
-  public void addMove(Move move) {
+  public boolean addMove(Move move) {
 
     if (!isAlreadyPlayed(move)) {
       moves.add(move);
+      return true;
     }
 
+    return false;
   }
 
   private boolean isAlreadyPlayed(Move move) {

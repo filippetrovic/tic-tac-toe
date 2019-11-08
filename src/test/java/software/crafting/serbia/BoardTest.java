@@ -82,4 +82,19 @@ class BoardTest {
         .isEqualTo("X _ _\n_ _ _\n_ _ _");
   }
 
+  @Test
+  @DisplayName("Should return false on invalid move")
+  void shouldReturnFalseOnInvalidMove() {
+    // Given
+    Board board = new Board();
+
+    // When
+    board.addMove(new Move(0, 0, 'X'));
+    boolean played = board.addMove(new Move(0, 0, 'O'));
+
+    // Then
+    assertThat(played)
+        .isFalse();
+  }
+
 }

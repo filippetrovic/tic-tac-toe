@@ -35,19 +35,6 @@ class GameTest {
   }
 
   @Test
-  @DisplayName("Second move is for player O")
-  void shouldTakeAMoveForPlayerOOnSecondMove() {
-
-    // When
-    game.takeMove(0, 0);
-    game.takeMove(1, 1);
-
-    // Then
-    verify(board).addMove(new Move(1, 1, 'O'));
-
-  }
-
-  @Test
   @DisplayName("Should alternate players after each move")
   void shouldAddAlternatePlayersAfterEachMove() {
 

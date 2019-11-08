@@ -1,5 +1,6 @@
 package software.crafting.serbia;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -55,6 +56,25 @@ class TicTacToeAcceptanceTest {
     // then
     assertThat(game.toString())
         .isEqualTo("X _ O\n_ O _\n_ _ X");
+
+  }
+
+  @Test
+  @DisplayName("Same move can be taken only once")
+  @Disabled
+  void moveCanBeTakenOnlyOnce() {
+
+    // given
+    Game game = new Game(new Board(), new StandardSequence());
+
+    // when
+    game.takeMove(0, 0);
+    game.takeMove(0, 0);
+    game.takeMove(2, 2);
+
+    // then
+    assertThat(game.toString())
+        .isEqualTo("X _ _\n_ _ _\n_ _ O");
 
   }
 

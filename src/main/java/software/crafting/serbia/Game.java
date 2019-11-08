@@ -5,7 +5,7 @@ public class Game {
   private final Board board;
   private final PlayerSequence playerSequence;
 
-  public Game(Board board, StandardSequence playerSequence) {
+  public Game(Board board, PlayerSequence playerSequence) {
     this.board = board;
     this.playerSequence = playerSequence;
   }

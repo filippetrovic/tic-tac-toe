@@ -7,8 +7,8 @@ class Move {
   private final Player player;
   private final Position position;
 
-  public Move(int row, int column, Player player) {
-    this.position = new Position(row, column);
+  public Move(Position position, Player player) {
+    this.position = position;
     this.player = player;
   }
 

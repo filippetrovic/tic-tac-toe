@@ -19,7 +19,7 @@ public class Player {
   }
 
   public Move getMove(int column, int row) {
-    return new Move(row, column, this);
+    return new Move(new Position(row, column), this);
   }
 
   public char getName() {

@@ -7,6 +7,9 @@ import static org.assertj.core.api.Assertions.*;
 
 class BoardTest {
 
+  private static final Player PLAYER_O = new Player('O');
+  private static final Player PLAYER_X = new Player('X');
+
   @Test
   @DisplayName("Should return valid string representation of board after a move in upper left corner")
   void shouldReturnValidStringRepresentationAfterOneMoveInTheUpperLeftCorner() {
@@ -14,7 +17,7 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(new Move(0, 0, new Player('X')));
+    board.addMove(new Move(0, 0, PLAYER_X));
 
     // Then
     assertThat(board.toString())
@@ -29,7 +32,7 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(new Move(2, 0, new Player('O')));
+    board.addMove(new Move(2, 0, PLAYER_O));
 
     // Then
     assertThat(board.toString())
@@ -43,7 +46,7 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(new Move(1, 1, new Player('X')));
+    board.addMove(new Move(1, 1, PLAYER_X));
 
     // Then
     assertThat(board.toString())
@@ -57,10 +60,10 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(new Move(1, 1, new Player('X')));
-    board.addMove(new Move(0, 0, new Player('O')));
-    board.addMove(new Move(2, 0, new Player('X')));
-    board.addMove(new Move(1, 0, new Player('O')));
+    board.addMove(new Move(1, 1, PLAYER_X));
+    board.addMove(new Move(0, 0, PLAYER_O));
+    board.addMove(new Move(2, 0, PLAYER_X));
+    board.addMove(new Move(1, 0, PLAYER_O));
 
     // Then
     assertThat(board.toString())
@@ -74,8 +77,8 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(new Move(0, 0, new Player('X')));
-    board.addMove(new Move(0, 0, new Player('O')));
+    board.addMove(new Move(0, 0, PLAYER_X));
+    board.addMove(new Move(0, 0, PLAYER_O));
 
     // Then
     assertThat(board.toString())
@@ -89,8 +92,8 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(new Move(0, 0, new Player('X')));
-    boolean played = board.addMove(new Move(0, 0, new Player('O')));
+    board.addMove(new Move(0, 0, PLAYER_X));
+    boolean played = board.addMove(new Move(0, 0, PLAYER_O));
 
     // Then
     assertThat(played)

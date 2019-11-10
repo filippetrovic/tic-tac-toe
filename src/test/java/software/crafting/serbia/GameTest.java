@@ -12,6 +12,9 @@ import static org.mockito.Mockito.verify;
 @ExtendWith(MockitoExtension.class)
 class GameTest {
 
+  private static final Player PLAYER_X = new Player('X');
+  private static final Player PLAYER_O = new Player('O');
+
   @Mock
   private Board board;
 
@@ -30,7 +33,7 @@ class GameTest {
     game.takeMove(0, 0);
 
     // Then
-    verify(board).addMove(new Move(0, 0, new Player('X')));
+    verify(board).addMove(new Move(0, 0, PLAYER_X));
 
   }
 
@@ -44,9 +47,9 @@ class GameTest {
     game.takeMove(1, 2);
 
     // Then
-    verify(board).addMove(new Move(0, 0, new Player('X')));
-    verify(board).addMove(new Move(0, 1, new Player('O')));
-    verify(board).addMove(new Move(2, 1, new Player('X')));
+    verify(board).addMove(new Move(0, 0, PLAYER_X));
+    verify(board).addMove(new Move(0, 1, PLAYER_O));
+    verify(board).addMove(new Move(2, 1, PLAYER_X));
 
   }
 

@@ -4,12 +4,12 @@ import java.util.Objects;
 
 class Move {
 
-  private final char player;
+  private final Player player;
   private final Position position;
 
   public Move(int row, int column, char player) {
     this.position = new Position(row, column);
-    this.player = player;
+    this.player = new Player(player);
   }
 
   public int getRow() {
@@ -25,7 +25,7 @@ class Move {
   }
 
   public char getPlayer() {
-    return player;
+    return player.getName();
   }
 
   @Override
@@ -45,7 +45,7 @@ class Move {
       return false;
     }
     Move move = (Move) o;
-    return player == move.player &&
+    return player.equals(move.player) &&
         position.equals(move.position);
   }
 

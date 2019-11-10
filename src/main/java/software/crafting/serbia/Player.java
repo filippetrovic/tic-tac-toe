@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Player {
 
   private final char name;
+  private final PositionProvider positionProvider = new PositionProvider();
 
   public Player(char name) {
     this.name = name;
@@ -19,7 +20,9 @@ public class Player {
   }
 
   public Move getMove(int column, int row) {
-    return new Move(new Position(row, column), this);
+    return new Move(
+        positionProvider.position(column, row),
+        this);
   }
 
   public char getName() {

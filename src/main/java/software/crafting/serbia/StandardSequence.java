@@ -2,24 +2,27 @@ package software.crafting.serbia;
 
 public class StandardSequence implements PlayerSequence {
 
-  private static final char PLAYER_X = 'X';
-  private static final char PLAYER_O = 'O';
+  private static final char PLAYER_X_NAME = 'X';
+  private static final char PLAYER_O_NAME = 'O';
 
-  private Character currentPlayer = PLAYER_X;
+  private static final Player PLAYER_O = new Player(PLAYER_O_NAME);
+  private static final Player PLAYER_X = new Player(PLAYER_X_NAME);
+
+  private Player current = PLAYER_X;
 
   @Override
   public Player next() {
-    currentPlayer = getNextAfter(currentPlayer);
+    current = getNextAfter(current);
 
-    return new Player(currentPlayer);
+    return current;
   }
 
   @Override
   public Player current() {
-    return new Player(currentPlayer);
+    return current;
   }
 
-  private char getNextAfter(Character player) {
-    return player.equals(PLAYER_X) ? PLAYER_O : PLAYER_X;
+  private Player getNextAfter(Player current) {
+    return current.equals(PLAYER_X) ? PLAYER_O : PLAYER_X;
   }
 }

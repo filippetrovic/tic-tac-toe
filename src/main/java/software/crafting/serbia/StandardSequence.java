@@ -15,8 +15,8 @@ public class StandardSequence implements PlayerSequence {
   }
 
   @Override
-  public Character current() {
-    return currentPlayer;
+  public Player current() {
+    return new Player(currentPlayer);
   }
 
   private char getNextAfter(Character player) {

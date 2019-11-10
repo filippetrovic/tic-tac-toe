@@ -24,7 +24,7 @@ class Move {
     return position;
   }
 
-  public char getPlayer() {
+  public String getPlayer() {
     return player.getName();
   }
 

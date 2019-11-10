@@ -9,8 +9,8 @@ import static org.assertj.core.api.Assertions.*;
 
 class TicTacToeAcceptanceTest {
 
-  private static final Player PLAYER_X = new Player('X');
-  private static final Player PLAYER_O = new Player('O');
+  private static final Player PLAYER_X = new Player("X");
+  private static final Player PLAYER_O = new Player("O");
 
   private StandardSequence ticTacToeSequence;
 

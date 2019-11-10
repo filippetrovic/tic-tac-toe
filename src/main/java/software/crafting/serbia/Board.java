@@ -16,7 +16,7 @@ public class Board {
     for (Move move : moves) {
       stringBuilder.setCharAt(
           move.getRow() * "_ _ _\n".length() + move.getColumn() * "_ ".length(),
-          move.getPlayer());
+          move.getPlayer().charAt(0));
     }
 
     return stringBuilder.toString();

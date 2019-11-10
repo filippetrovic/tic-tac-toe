@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Player {
 
-  private final char name;
+  private final String name;
   private final PositionProvider positionProvider = new PositionProvider();
 
-  public Player(char name) {
+  public Player(String name) {
     this.name = name;
   }
 
@@ -25,7 +25,7 @@ public class Player {
         this);
   }
 
-  public char getName() {
+  public String getName() {
     return name;
   }
 

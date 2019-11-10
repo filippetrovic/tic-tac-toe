@@ -10,6 +10,10 @@ public class Player {
     this.name = name;
   }
 
+  public void takeMoveOn(Board board) {
+    board.addMove(getMove(0, 0));
+  }
+
   public void takeMoveOn(int column, int row, Board board) {
     board.addMove(getMove(column, row));
   }

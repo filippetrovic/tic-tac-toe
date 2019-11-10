@@ -40,7 +40,7 @@ class GameTest {
     game.takeMove();
 
     // Then
-    verify(PLAYER).takeMoveOn(0, 0, board);
+    verify(PLAYER).takeMoveOn(board);
 
   }
 

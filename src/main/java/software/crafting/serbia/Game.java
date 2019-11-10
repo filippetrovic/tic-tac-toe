@@ -11,7 +11,11 @@ public class Game {
   }
 
   public void takeMove() {
-    takeMove(0, 0);
+    Player player = playerSequence.current();
+
+    player.takeMoveOn(board);
+
+    playerSequence.next();
   }
 
   public void takeMove(int column, int row) {

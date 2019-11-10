@@ -7,8 +7,8 @@ import static org.assertj.core.api.Assertions.*;
 
 class BoardTest {
 
-  private static final Player PLAYER_O = new Player("O");
-  private static final Player PLAYER_X = new Player("X");
+  private static final Player PLAYER_O = new Player("O", null);
+  private static final Player PLAYER_X = new Player("X", null);
 
   @Test
   @DisplayName("Should return valid string representation of board after a move in upper left corner")

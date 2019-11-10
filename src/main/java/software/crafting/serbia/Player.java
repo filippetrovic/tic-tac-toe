@@ -5,10 +5,11 @@ import java.util.Objects;
 public class Player {
 
   private final String name;
-  private final PositionProvider positionProvider = new PositionProvider();
+  private final PositionProvider positionProvider;
 
-  public Player(String name) {
+  public Player(String name, PositionProvider positionProvider) {
     this.name = name;
+    this.positionProvider = positionProvider;
   }
 
   public void takeMoveOn(Board board) {

@@ -8,9 +8,9 @@ import static org.assertj.core.api.Assertions.*;
 
 class StandardSequenceTest {
 
-  private static final Player FIRST_PLAYER = new Player("X");
-  private static final Player SECOND_PLAYER = new Player("O");
-  private static final Player THIRD_PLAYER = new Player("Z");
+  private static final Player FIRST_PLAYER = new Player("X", null);
+  private static final Player SECOND_PLAYER = new Player("O", null);
+  private static final Player THIRD_PLAYER = new Player("Z", null);
 
   private PlayerSequence sequence;
 

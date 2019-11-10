@@ -1,22 +1,31 @@
 package software.crafting.serbia;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 class TicTacToeAcceptanceTest {
 
-  private static final Player PLAYER_X = new Player("X", new SequencePositionProvider());
-  private static final Player PLAYER_O = new Player("O", new SequencePositionProvider());
+  @Mock
+  private PositionProvider playerXMoves;
+
+  @Mock
+  private PositionProvider playerOMoves;
 
   private StandardSequence ticTacToeSequence;
 
   @BeforeEach
   void setUp() {
-    ticTacToeSequence = new StandardSequence(PLAYER_X, PLAYER_O);
+    ticTacToeSequence = new StandardSequence(
+        new Player("X", playerXMoves),
+        new Player("O", playerOMoves));
   }
 
   @Test
@@ -42,8 +51,11 @@ class TicTacToeAcceptanceTest {
     // given
     Game game = new Game(new Board(), ticTacToeSequence);
 
+    when(playerXMoves.position())
+        .thenReturn(new Position(0, 0));
+
     // when
-    game.takeMove(0, 0);
+    game.takeMove();
 
     // then
     assertThat(game.toString())
@@ -58,34 +70,25 @@ class TicTacToeAcceptanceTest {
     // given
     Game game = new Game(new Board(), ticTacToeSequence);
 
+    when(playerXMoves.position())
+        .thenReturn(
+            new Position(0, 0),
+            new Position(2, 2));
+
+    when(playerOMoves.position())
+        .thenReturn(
+            new Position(1, 1),
+            new Position(0, 2));
+
     // when
-    game.takeMove(0, 0);
-    game.takeMove(1, 1);
-    game.takeMove(2, 2);
-    game.takeMove(2, 0);
+    game.takeMove();
+    game.takeMove();
+    game.takeMove();
+    game.takeMove();
 
     // then
     assertThat(game.toString())
         .isEqualTo("X _ O\n_ O _\n_ _ X");
-
-  }
-
-  @Test
-  @DisplayName("Same move can be taken only once")
-  @Disabled
-  void moveCanBeTakenOnlyOnce() {
-
-    // given
-    Game game = new Game(new Board(), ticTacToeSequence);
-
-    // when
-    game.takeMove(0, 0);
-    game.takeMove(0, 0);
-    game.takeMove(2, 2);
-
-    // then
-    assertThat(game.toString())
-        .isEqualTo("X _ _\n_ _ _\n_ _ O");
 
   }
 

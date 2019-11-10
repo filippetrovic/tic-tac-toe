@@ -22,7 +22,7 @@ public class Player {
 
   public Move getMove(int column, int row) {
     return new Move(
-        positionProvider.position(column, row),
+        positionProvider.position(),
         this);
   }
 

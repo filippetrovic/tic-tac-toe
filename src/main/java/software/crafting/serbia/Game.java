@@ -18,15 +18,6 @@ public class Game {
     playerSequence.next();
   }
 
-  public void takeMove(int column, int row) {
-
-    Player player = playerSequence.current();
-
-    player.takeMoveOn(column, row, board);
-
-    playerSequence.next();
-  }
-
   @Override
   public String toString() {
     return board.toString();

@@ -13,14 +13,10 @@ public class Player {
   }
 
   public void takeMoveOn(Board board) {
-    board.addMove(getMove(0, 0));
+    board.addMove(getMove());
   }
 
-  public void takeMoveOn(int column, int row, Board board) {
-    board.addMove(getMove(column, row));
-  }
-
-  public Move getMove(int column, int row) {
+  public Move getMove() {
     return new Move(
         positionProvider.position(),
         this);

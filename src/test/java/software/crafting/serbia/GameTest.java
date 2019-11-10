@@ -30,7 +30,7 @@ class GameTest {
     game.takeMove(0, 0);
 
     // Then
-    verify(board).addMove(new Move(0, 0, 'X'));
+    verify(board).addMove(new Move(0, 0, new Player('X')));
 
   }
 
@@ -44,9 +44,9 @@ class GameTest {
     game.takeMove(1, 2);
 
     // Then
-    verify(board).addMove(new Move(0, 0, 'X'));
-    verify(board).addMove(new Move(0, 1, 'O'));
-    verify(board).addMove(new Move(2, 1, 'X'));
+    verify(board).addMove(new Move(0, 0, new Player('X')));
+    verify(board).addMove(new Move(0, 1, new Player('O')));
+    verify(board).addMove(new Move(2, 1, new Player('X')));
 
   }
 

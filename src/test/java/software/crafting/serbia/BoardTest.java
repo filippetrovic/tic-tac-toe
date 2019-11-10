@@ -14,7 +14,7 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(new Move(0, 0, 'X'));
+    board.addMove(new Move(0, 0, new Player('X')));
 
     // Then
     assertThat(board.toString())
@@ -29,7 +29,7 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(new Move(2, 0, 'O'));
+    board.addMove(new Move(2, 0, new Player('O')));
 
     // Then
     assertThat(board.toString())
@@ -43,7 +43,7 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(new Move(1, 1, 'X'));
+    board.addMove(new Move(1, 1, new Player('X')));
 
     // Then
     assertThat(board.toString())
@@ -57,10 +57,10 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(new Move(1, 1, 'X'));
-    board.addMove(new Move(0, 0, 'O'));
-    board.addMove(new Move(2, 0, 'X'));
-    board.addMove(new Move(1, 0, 'O'));
+    board.addMove(new Move(1, 1, new Player('X')));
+    board.addMove(new Move(0, 0, new Player('O')));
+    board.addMove(new Move(2, 0, new Player('X')));
+    board.addMove(new Move(1, 0, new Player('O')));
 
     // Then
     assertThat(board.toString())
@@ -74,8 +74,8 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(new Move(0, 0, 'X'));
-    board.addMove(new Move(0, 0, 'O'));
+    board.addMove(new Move(0, 0, new Player('X')));
+    board.addMove(new Move(0, 0, new Player('O')));
 
     // Then
     assertThat(board.toString())
@@ -89,8 +89,8 @@ class BoardTest {
     Board board = new Board();
 
     // When
-    board.addMove(new Move(0, 0, 'X'));
-    boolean played = board.addMove(new Move(0, 0, 'O'));
+    board.addMove(new Move(0, 0, new Player('X')));
+    boolean played = board.addMove(new Move(0, 0, new Player('O')));
 
     // Then
     assertThat(played)

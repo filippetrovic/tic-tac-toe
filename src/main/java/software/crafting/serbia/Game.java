@@ -10,6 +10,10 @@ public class Game {
     this.playerSequence = playerSequence;
   }
 
+  public void takeMove() {
+    takeMove(0, 0);
+  }
+
   public void takeMove(int column, int row) {
 
     Player player = playerSequence.current();

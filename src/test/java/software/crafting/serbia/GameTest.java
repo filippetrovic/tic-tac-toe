@@ -37,7 +37,7 @@ class GameTest {
   void shouldInvokePlayerToTakeAMove() {
 
     // When
-    game.takeMove(0, 0);
+    game.takeMove();
 
     // Then
     verify(PLAYER).takeMoveOn(0, 0, board);
@@ -49,7 +49,7 @@ class GameTest {
   void shouldNotifyThatRoundIsDone() {
 
     // When
-    game.takeMove(0, 0);
+    game.takeMove();
 
     // Then
     verify(sequence).next();

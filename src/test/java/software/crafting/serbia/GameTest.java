@@ -45,8 +45,8 @@ class GameTest {
   }
 
   @Test
-  @DisplayName("Should notify that round is done")
-  void shouldNotifyThatRoundIsDone() {
+  @DisplayName("Should alternate player when round is done")
+  void shouldAlternatePlayerWhenRoundIsDone() {
 
     // When
     game.takeMove();

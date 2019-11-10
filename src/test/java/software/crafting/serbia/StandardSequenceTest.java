@@ -16,7 +16,7 @@ class StandardSequenceTest {
 
   @BeforeEach
   void setUp() {
-    sequence = new StandardSequence();
+    sequence = new StandardSequence(FIRST_PLAYER, SECOND_PLAYER);
   }
 
   @Test

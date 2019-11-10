@@ -1,5 +1,6 @@
 package software.crafting.serbia;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,12 +9,22 @@ import static org.assertj.core.api.Assertions.*;
 
 class TicTacToeAcceptanceTest {
 
+  private static final Player PLAYER_X = new Player('X');
+  private static final Player PLAYER_O = new Player('O');
+
+  private StandardSequence ticTacToeSequence;
+
+  @BeforeEach
+  void setUp() {
+    ticTacToeSequence = new StandardSequence(PLAYER_X, PLAYER_O);
+  }
+
   @Test
   @DisplayName("New game has empty board")
   void emptyGame() {
 
     // given
-    Game game = new Game(new Board(), new StandardSequence());
+    Game game = new Game(new Board(), ticTacToeSequence);
 
     // when
     // nothing
@@ -29,7 +40,7 @@ class TicTacToeAcceptanceTest {
   void playerXCanTakeAMove() {
 
     // given
-    Game game = new Game(new Board(), new StandardSequence());
+    Game game = new Game(new Board(), ticTacToeSequence);
 
     // when
     game.takeMove(0, 0);
@@ -45,7 +56,7 @@ class TicTacToeAcceptanceTest {
   void playerXAndOCanTakeMovesOneAfterAnother() {
 
     // given
-    Game game = new Game(new Board(), new StandardSequence());
+    Game game = new Game(new Board(), ticTacToeSequence);
 
     // when
     game.takeMove(0, 0);
@@ -65,7 +76,7 @@ class TicTacToeAcceptanceTest {
   void moveCanBeTakenOnlyOnce() {
 
     // given
-    Game game = new Game(new Board(), new StandardSequence());
+    Game game = new Game(new Board(), ticTacToeSequence);
 
     // when
     game.takeMove(0, 0);

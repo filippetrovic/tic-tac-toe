@@ -14,7 +14,7 @@ public class Game {
 
     Player player = playerSequence.current();
 
-    board.addMove(new Move(row, column, player));
+    player.takeMoveOn(column, row, board);
 
     playerSequence.next();
   }

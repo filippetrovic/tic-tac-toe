@@ -10,6 +10,14 @@ public class Player {
     this.name = name;
   }
 
+  public void takeMoveOn(int column, int row, Board board) {
+    board.addMove(getMove(column, row));
+  }
+
+  public Move getMove(int column, int row) {
+    return new Move(row, column, this);
+  }
+
   public char getName() {
     return name;
   }

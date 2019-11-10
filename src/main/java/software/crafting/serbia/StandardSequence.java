@@ -8,10 +8,10 @@ public class StandardSequence implements PlayerSequence {
   private Character currentPlayer = PLAYER_X;
 
   @Override
-  public Character next() {
+  public Player next() {
     currentPlayer = getNextAfter(currentPlayer);
 
-    return currentPlayer;
+    return new Player(currentPlayer);
   }
 
   @Override

@@ -1,6 +1,7 @@
 package software.crafting.serbia;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -87,6 +88,32 @@ class TicTacToeAcceptanceTest {
     // then
     assertThat(game.toString())
         .isEqualTo("X _ O\n_ O _\n_ _ X");
+
+  }
+
+  @Test
+  @DisplayName("Player O should take a valid move from the second attempt")
+  @Disabled
+  void playerOShouldTakeValidMoveFromTheSecondAttempt() {
+
+    // given
+    when(playerXMoves.position())
+        .thenReturn(
+            new Position(0, 0));
+
+    when(playerOMoves.position())
+        .thenReturn(
+            new Position(0, 0),
+            new Position(1, 1));
+
+    // when
+    game.takeMove();
+    game.takeMove();
+    game.takeMove();
+
+    // then
+    assertThat(game.toString())
+        .isEqualTo("X _ _\n_ O _\n_ _ _");
 
   }
 

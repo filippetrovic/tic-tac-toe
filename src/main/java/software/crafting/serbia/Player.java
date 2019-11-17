@@ -42,7 +42,7 @@ public class Player {
       return false;
     }
     Player player = (Player) o;
-    return name == player.name;
+    return name.equals(player.name);
   }
 
   @Override

@@ -1,7 +1,6 @@
 package software.crafting.serbia;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -93,7 +92,6 @@ class TicTacToeAcceptanceTest {
 
   @Test
   @DisplayName("Player O should take a valid move from the second attempt")
-  @Disabled
   void playerOShouldTakeValidMoveFromTheSecondAttempt() {
 
     // given

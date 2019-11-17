@@ -1,5 +1,8 @@
 package software.crafting.serbia;
 
+import software.crafting.serbia.board.Board;
+import software.crafting.serbia.port.input.position.PositionProvider;
+
 import java.util.Objects;
 
 public class Player {

@@ -1,4 +1,4 @@
-package software.crafting.serbia;
+package software.crafting.serbia.port.input.position;
 
 import java.util.Objects;
 

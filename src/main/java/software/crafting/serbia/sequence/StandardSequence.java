@@ -1,4 +1,6 @@
-package software.crafting.serbia;
+package software.crafting.serbia.sequence;
+
+import software.crafting.serbia.Player;
 
 public class StandardSequence implements PlayerSequence {
 

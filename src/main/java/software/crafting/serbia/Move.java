@@ -1,8 +1,10 @@
 package software.crafting.serbia;
 
+import software.crafting.serbia.port.input.position.Position;
+
 import java.util.Objects;
 
-class Move {
+public class Move {
 
   private final Player player;
   private final Position position;

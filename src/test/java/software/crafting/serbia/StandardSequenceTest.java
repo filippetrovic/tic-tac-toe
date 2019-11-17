@@ -3,6 +3,8 @@ package software.crafting.serbia;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import software.crafting.serbia.sequence.PlayerSequence;
+import software.crafting.serbia.sequence.StandardSequence;
 
 import static org.assertj.core.api.Assertions.*;
 

@@ -6,6 +6,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import software.crafting.serbia.board.Board;
+import software.crafting.serbia.port.input.position.Position;
+import software.crafting.serbia.port.input.position.PositionProvider;
+import software.crafting.serbia.sequence.PlayerSequence;
+import software.crafting.serbia.sequence.StandardSequence;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.when;

@@ -2,6 +2,8 @@ package software.crafting.serbia;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import software.crafting.serbia.board.Board;
+import software.crafting.serbia.port.input.position.Position;
 
 import static org.assertj.core.api.Assertions.*;
 

@@ -1,5 +1,8 @@
 package software.crafting.serbia;
 
+import software.crafting.serbia.board.Board;
+import software.crafting.serbia.sequence.PlayerSequence;
+
 public class Game {
 
   private final Board board;

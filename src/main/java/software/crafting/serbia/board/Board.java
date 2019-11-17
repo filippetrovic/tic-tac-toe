@@ -1,4 +1,6 @@
-package software.crafting.serbia;
+package software.crafting.serbia.board;
+
+import software.crafting.serbia.Move;
 
 import java.util.LinkedList;
 import java.util.List;

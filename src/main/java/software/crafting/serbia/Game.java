@@ -13,9 +13,9 @@ public class Game {
   public void takeMove() {
     Player player = playerSequence.current();
 
-    player.takeMoveOn(board);
-
-    playerSequence.next();
+    if (player.takeMoveOn(board)) {
+      playerSequence.next();
+    }
   }
 
   @Override

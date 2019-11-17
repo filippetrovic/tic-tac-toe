@@ -9,6 +9,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -48,6 +49,11 @@ class GameTest {
   @DisplayName("Should alternate player when round is done")
   void shouldAlternatePlayerWhenRoundIsDone() {
 
+    // given
+    // valid move
+    when(PLAYER.takeMoveOn(board))
+        .thenReturn(true);
+
     // When
     game.takeMove();
 
@@ -56,4 +62,20 @@ class GameTest {
 
   }
 
+  @Test
+  @DisplayName("Should not change player on invalid move")
+  void shouldNotChangePlayerOnInvalidMove() {
+
+    // Given
+    // invalid move
+    when(PLAYER.takeMoveOn(board))
+        .thenReturn(false);
+
+    // When
+    game.takeMove();
+
+    // Then
+    verify(sequence, never()).next();
+
+  }
 }

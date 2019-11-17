@@ -12,8 +12,8 @@ public class Player {
     this.positionProvider = positionProvider;
   }
 
-  public void takeMoveOn(Board board) {
-    board.addMove(getMove());
+  public boolean takeMoveOn(Board board) {
+    return board.addMove(getMove());
   }
 
   public Move getMove() {

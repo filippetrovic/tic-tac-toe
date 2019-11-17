@@ -19,13 +19,15 @@ class TicTacToeAcceptanceTest {
   @Mock
   private PositionProvider playerOMoves;
 
-  private StandardSequence ticTacToeSequence;
+  private Game game;
 
   @BeforeEach
   void setUp() {
-    ticTacToeSequence = new StandardSequence(
+    PlayerSequence ticTacToeSequence = new StandardSequence(
         new Player("X", playerXMoves),
         new Player("O", playerOMoves));
+
+    game = new Game(new Board(), ticTacToeSequence);
   }
 
   @Test
@@ -33,7 +35,7 @@ class TicTacToeAcceptanceTest {
   void emptyGame() {
 
     // given
-    Game game = new Game(new Board(), ticTacToeSequence);
+    // new gate
 
     // when
     // nothing
@@ -49,8 +51,6 @@ class TicTacToeAcceptanceTest {
   void playerXCanTakeAMove() {
 
     // given
-    Game game = new Game(new Board(), ticTacToeSequence);
-
     when(playerXMoves.position())
         .thenReturn(new Position(0, 0));
 
@@ -68,8 +68,6 @@ class TicTacToeAcceptanceTest {
   void playerXAndOCanTakeMovesOneAfterAnother() {
 
     // given
-    Game game = new Game(new Board(), ticTacToeSequence);
-
     when(playerXMoves.position())
         .thenReturn(
             new Position(0, 0),
